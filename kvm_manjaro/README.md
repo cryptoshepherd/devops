@@ -118,7 +118,4 @@ sudo nmcli con mod br0 ipv4.method manual
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/the_lello) – lellothegreat@protonmail.ch
-
-Distributed under the GNU license. See ``LICENSE`` for more information.
-
+Your Name – [@the_lello](https://twitter.com/the_lello) – lellothegreat@protonmail.ch
