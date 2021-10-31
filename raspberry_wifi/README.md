@@ -38,6 +38,7 @@ network={
         ssid="YOUR_SSID"
         psk="YOUR_WiFi_PASSWD"
         key_mgmt=WPA-PSK
+        auth_alg=OPEN
  }
 ---
 
