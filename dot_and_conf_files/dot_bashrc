@@ -1,0 +1,9 @@
+## Python 3.9 Ubuntu
+alias python='/usr/bin/python3.9'
+alias pip='~/.local/bin/pip3.9'
+
+## Bitcoin Node
+alias block='bitcoin-cli getblockchaininfo'
+alias conn='bitcoin-cli getconnectioncount'
+
+

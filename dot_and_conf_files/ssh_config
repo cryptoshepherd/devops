@@ -1,0 +1,17 @@
+# .ssh/config
+
+Host raspberrypi.local
+     User user
+     Hostname xxx.xxx.xxx.xxx
+     Port 22
+     
+### Default settings for all Hosts if not declared above
+#Host *
+#      ForwardAgent yes
+#      ForwardX11 yes
+#      ForwardX11Trusted yes
+#      User ron
+#      Port 22
+#      Protocol 2
+#      ServerAliveInterval 60
+#     ServerAliveCountMax 30

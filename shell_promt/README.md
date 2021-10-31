@@ -82,6 +82,20 @@ cd nerd-fonts
 sudo ./install.sh
 ```
 
+## Neovim Installation (Ubuntu)
+
+sudo apt install neovim python3-neovim
+
+mkdir .config/nvim/ && touch .config/nvim/init.vim
+
+Vim Plugged:
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+* To Install all The Plugins --> :PlugInstall
+
+
 ## Meta
 
 Simone Arena – [@the_lello](https://twitter.com/the_lello) – lellothegreat@protonmail.ch
