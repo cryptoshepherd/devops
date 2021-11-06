@@ -8,5 +8,6 @@ alias conn='bitcoin-cli getconnectioncount'
 
 ## Secure Delete
 alias findme='shred -uvz -n 28' $1
+alias 2fa='oathtool -b --totp '$1''
 
 
