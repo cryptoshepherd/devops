@@ -6,4 +6,7 @@ alias pip='~/.local/bin/pip3.9'
 alias block='bitcoin-cli getblockchaininfo'
 alias conn='bitcoin-cli getconnectioncount'
 
+## Secure Delete
+alias findme='shred -uvz -n 28' $1
+
 
