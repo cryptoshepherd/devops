@@ -1,5 +1,26 @@
 # .ssh/config
 
+* - Matches zero or more characters. For example, Host * matches all hosts, while 192.168.0.* matches hosts in the 192.168.0.0/24 subnet.
+? - Matches exactly one character. The pattern, Host 10.10.0.? matches all hosts in 10.10.0.[0-9] range.
+! - When used at the start of a pattern, it negates the match. For example, Host 10.10.0.* !10.10.0.5 matches any host in the 10.10.0.0/24 subnet except 10.10.0.5.
+
+
+Host targaryen
+    HostName 192.168.1.10
+    User daenerys
+    Port 7654
+    IdentityFile ~/.ssh/targaryen.key
+    
+Host *ell
+    user oberyn
+
+Host * !martell
+    LogLevel INFO
+
+Host *
+    User root
+    Compression yes
+
 Host raspberrypi.local
      User user
      Hostname xxx.xxx.xxx.xxx
