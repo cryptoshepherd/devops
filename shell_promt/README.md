@@ -1,103 +1,75 @@
-# Starship to improve Bash 
+# ZSH (using Oh My ZSH) on Manjaro Linux
 
-Starship's installation and configuration for Bash
-
-![](header.png)
-
-## Installation
-
-
-```sh
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-
-# ~/.bashrc
-
----
-eval "$(starship init bash)"
-export LC_ALL="en_US.UTF-8"
----
-
-mkdir -p ~/.config && touch ~/.config/starship.toml
-
-
-# Inserts a blank line between shell prompts
-add_newline = true
-
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
-```
-
-## Condifuration and Customization
-
-```sh
-sudo pacman -S noto-fonts-emoji
+#### 0. If `ZSH` is not already installed on your Manjaro system you can do it with the command:
 
 ```
-
-```sh
----> /etc/fonts/local.conf
-
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
- <alias>
-   <family>sans-serif</family>
-   <prefer>
-     <family>Noto Sans</family>
-     <family>Noto Color Emoji</family>
-     <family>Noto Emoji</family>
-     <family>DejaVu Sans</family>
-   </prefer> 
- </alias>
-
- <alias>
-   <family>serif</family>
-   <prefer>
-     <family>Noto Serif</family>
-     <family>Noto Color Emoji</family>
-     <family>Noto Emoji</family>
-     <family>DejaVu Serif</family>
-   </prefer>
- </alias>
-
- <alias>
-  <family>monospace</family>
-  <prefer>
-    <family>Noto Mono</family>
-    <family>Noto Color Emoji</family>
-    <family>Noto Emoji</family>
-   </prefer>
- </alias>
-</fontconfig>
+sudo pacman -Syu zsh
 ```
 
-```sh
-git clone https://github.com/ryanoasis/nerd-fonts
-cd nerd-fonts
-sudo ./install.sh
+You do not need to install `manjaro-zsh-config` and all the other related packages like `zsh-syntax-highlighting`, `zsh-history-substring-search`, `zsh-autosuggestions`, etc., as we will use Oh My Zsh.
+
+#### 1. Install [Oh My ZSH](https://ohmyz.sh/)
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-## Neovim Installation (Ubuntu)
+or
 
-sudo apt install neovim python3-neovim
+```
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
 
-mkdir .config/nvim/ && touch .config/nvim/init.vim
+#### 2. Installation of two important plugins I can't live without
 
-Vim Plugged:
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+and
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
 
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+#### 3. Configuring zsh
 
-* To Install all The Plugins --> :PlugInstall
+Modify the `~/.zshrc` config file editting plugins section like this:
+```
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+```
 
+Change the theme to agnoster:
+```
+ZSH_THEME="agnoster"
+```
 
-## Meta
+#### 4. Logout/logon or apply the changes with:
+```
+source ~/.zshrc
+```
 
-Simone Arena – [@the_lello](https://twitter.com/the_lello) – lellothegreat@protonmail.ch
+#### 5. Make zsh default if you haven't already:
+```
+chsh -s $(which zsh)
+```
 
+#### 6. Ascii art at terminal start
+```
+git clone https://aur.archlinux.org/ascii-image-converter-git.git
+cd ascii-image-converter-git/
+makepkg -si
+ascii-image-converter path_to_image
+- or -
+ascii-image-converter -C path_to_image ( for colors )
+```
+
+#### 7. Modify .zshrc
+
+```
+# Ascii
+cat /home/satoshi/Desktop/ascii/1.txt
+```
 
