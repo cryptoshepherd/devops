@@ -39,7 +39,7 @@ sudo systemctl enable fail2ban.service
 sudo nano /etc/fail2ban/jail.local
 
 
-´´´
+---
 [sshd]
 enabled = true
 port = ssh
@@ -49,7 +49,7 @@ maxretry = 3
 findtime = 300
 bantime = 3600
 ignoreip = 127.0.0.1
-
+---
 
 sudo systemctl restart fail2ban.service
 
