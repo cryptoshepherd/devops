@@ -1,6 +1,6 @@
 # Auto Update Vulns
 ```sh
-sudo apt install unattended-upgr
+sudo apt install unattended-upgrades
 sudo dpkg-reconfigure --priority=low 
 ```
 
